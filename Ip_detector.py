@@ -37,14 +37,9 @@ try:
         
         extra_input = input(f"{Fore.GREEN}[+]{Fore.WHITE} There is More information in Your System...Would You Like to See Them ?{Fore.CYAN} (if yes type Y else N) =>{Fore.GREEN}")
         if extra_input == "Y":
-            shell_command = subprocess.check_output("ipconfig" , shell = True).decode()
+            shell_command = subprocess.check_output("ifconfig" , shell = True).decode()
             time.sleep(1.5)
             print(f"{Fore.GREEN}{shell_command}")
-            try:
-                shell_command_linux = subprocess.check_output("ifconfig" , shell = True).decode()
-                print(f"{Fore.GREEN}{shell_command_linux}")
-            except Exception as error:
-                print(f"{Fore.RED}Error!" + str(error))
 
         elif extra_input == "N":
             print(f"\n{Fore.LIGHTBLUE_EX} Have A Nice Day :)")
